@@ -1,0 +1,23 @@
+version: "3"
+services:
+    mysql:
+        image: mysql:8.0.17
+		container_name: mysql
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: 888888
+        restart: always
+	redis:
+		image: redis
+		container_name: redis
+		ports:
+			- "6379:6379"
+		command: --appendonly yes
+		restart: always
+	mongo:
+		image: mongo
+		container_name: mongo
+		ports:
+			- "27019:27019"
+		restart: always
